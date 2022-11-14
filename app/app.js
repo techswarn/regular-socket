@@ -1,6 +1,6 @@
 // Regular Websockets
 
-const socket = new WebSocket('ws://localhost:8080');
+const socket = new WebSocket('wss://whale-app-hppm6.ondigitalocean.app/');
 
 // Listen for messages
 socket.onmessage = ({ data }) => {
