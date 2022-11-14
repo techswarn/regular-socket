@@ -10,6 +10,9 @@ socket.addEventListener('open', (event) => {
 // Listen for messages
 socket.onmessage = ({ data }) => {
     console.log('Message from server ', data);
+    const el = document.createElement('li');
+    el.innerHTML = data;
+    document.querySelector('ul').appendChild(el)
 };
 
 // Send hello to from client to server after 120000 seconds.
