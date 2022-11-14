@@ -10,4 +10,10 @@ server.on('connection', socket => {
 
   });
 
+  setInterval(() => {
+    console.log("ping")
+    socket.ping();
+    socket.send("heartbeat");
+  }, 10000);
+
 });
