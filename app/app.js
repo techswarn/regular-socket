@@ -12,10 +12,13 @@ socket.onmessage = ({ data }) => {
     console.log('Message from server ', data);
 };
 
+// Send hello to from client to server after 120000 seconds.
 setTimeout(() => {
     socket.send('Hello Server!');
- }, 1000) // 120 sec
- 
+ }, 120000) // 120 sec
+
+
+ // If you wish you can send message through form
 document.querySelector('button').onclick = () => {
     const text = document.querySelector('input').value;
     socket.send(text);
