@@ -1,30 +1,30 @@
 // Regular Websockets
 
-const socket = new WebSocket('wss://websocket-veu3c.ondigitalocean.app/server');
+const socket = new WebSocket(
+  "wss://websocket-app-2t8st.ondigitalocean.app/server"
+);
 
 //const socket = new WebSocket('ws://localhost:8080');
 
-
-socket.addEventListener('open', (event) => {
-    console.log('connected');
+socket.addEventListener("open", (event) => {
+  console.log("connected");
 });
 
 // Listen for messages
 socket.onmessage = ({ data }) => {
-    console.log('Message from server ', data);
-    const el = document.createElement('li');
-    el.innerHTML = data;
-    document.querySelector('ul').appendChild(el)
+  console.log("Message from server ", data);
+  const el = document.createElement("li");
+  el.innerHTML = data;
+  document.querySelector("ul").appendChild(el);
 };
 
 // Send hello to from client to server after 120000 seconds.
 setTimeout(() => {
-    socket.send('Hello Server!');
- }, 120000) // 120 sec
+  socket.send("Hello Server!");
+}, 120000); // 120 sec
 
-
- // If you wish you can send message through form
-document.querySelector('button').onclick = () => {
-    const text = document.querySelector('input').value;
-    socket.send(text);
-}
+// If you wish you can send message through form
+document.querySelector("button").onclick = () => {
+  const text = document.querySelector("input").value;
+  socket.send(text);
+};
