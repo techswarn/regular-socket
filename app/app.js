@@ -1,7 +1,7 @@
 // Regular Websockets
 
 const socket = new WebSocket(
-  "wss://websocket-app-2t8st.ondigitalocean.app/server"
+  "https://walrus-app-q2hd7.ondigitalocean.app/server"
 );
 
 //const socket = new WebSocket('ws://localhost:8080');
